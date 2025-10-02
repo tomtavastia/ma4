@@ -1,0 +1,143 @@
+<!-- aunis_iyh_nilaairetam_n:(kt)_tynillop_telo -->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Yksikönmuunnostehtävät</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .task {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .solution {
+            display: none;
+            margin-top: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Yksikönmuunnostehtävät</h2>
+    <p><strong>Ohje:</strong> Tee yksikönmuunnokset</p>
+
+    <div class="task">
+        <p>1. Muunna 3 m² → cm²</p>
+        <input id="answer1" type="text"/>
+        <button onclick="checkAnswer(1)">Tarkista</button>
+        <div id="feedback1"></div>
+        <div id="solution1" class="solution">Ratkaisu: 1 m² = 100 cm × 100 cm = 10 000 cm² → 3 m² = 3 · 10 000 = 30 000 cm²</div>
+    </div>
+
+    <div class="task">
+        <p>2. Muunna 4500 cm² → m²</p>
+        <input id="answer2" type="text"/>
+        <button onclick="checkAnswer(2)">Tarkista</button>
+        <div id="feedback2"></div>
+        <div id="solution2" class="solution">Ratkaisu: 1 m² = 10 000 cm² → 4500 ÷ 10 000 = 0,45 m²</div>
+    </div>
+
+    <div class="task">
+        <p>3. Muunna 2,5 dm² → cm²</p>
+        <input id="answer3" type="text"/>
+        <button onclick="checkAnswer(3)">Tarkista</button>
+        <div id="feedback3"></div>
+        <div id="solution3" class="solution">Ratkaisu: 1 dm² = 10 cm × 10 cm = 100 cm² → 2,5 · 100 = 250 cm²</div>
+    </div>
+
+    <div class="task">
+        <p>4. Muunna 0,03 ha → m²</p>
+        <input id="answer4" type="text"/>
+        <button onclick="checkAnswer(4)">Tarkista</button>
+        <div id="feedback4"></div>
+        <div id="solution4" class="solution">Ratkaisu: 1 ha = 10 000 m² → 0,03 · 10 000 = 300 m²</div>
+    </div>
+
+    <div class="task">
+        <p>5. Muunna 1200 mm² → cm²</p>
+        <input id="answer5" type="text"/>
+        <button onclick="checkAnswer(5)">Tarkista</button>
+        <div id="feedback5"></div>
+        <div id="solution5" class="solution">Ratkaisu: 1 cm² = 100 mm² → 1200 ÷ 100 = 12 cm²</div>
+    </div>
+
+    <div class="task">
+        <p>6. Muunna 5 m³ → dm³</p>
+        <input id="answer6" type="text"/>
+        <button onclick="checkAnswer(6)">Tarkista</button>
+        <div id="feedback6"></div>
+        <div id="solution6" class="solution">Ratkaisu: 1 m³ = 10 dm × 10 dm × 10 dm = 1000 dm³ → 5 · 1000 = 5000 dm³</div>
+    </div>
+
+    <div class="task">
+        <p>7. Muunna 2500 cm³ → dm³</p>
+        <input id="answer7" type="text"/>
+        <button onclick="checkAnswer(7)">Tarkista</button>
+        <div id="feedback7"></div>
+        <div id="solution7" class="solution">Ratkaisu: 1 dm³ = 1000 cm³ → 2500 ÷ 1000 = 2,5 dm³</div>
+    </div>
+
+    <div class="task">
+        <p>8. Muunna 0,75 l → cm³</p>
+        <input id="answer8" type="text"/>
+        <button onclick="checkAnswer(8)">Tarkista</button>
+        <div id="feedback8"></div>
+        <div id="solution8" class="solution">Ratkaisu: 1 l = 1000 cm³ → 0,75 · 1000 = 750 cm³</div>
+    </div>
+
+    <div class="task">
+        <p>9. Muunna 6000 mm³ → cm³</p>
+        <input id="answer9" type="text"/>
+        <button onclick="checkAnswer(9)">Tarkista</button>
+        <div id="feedback9"></div>
+        <div id="solution9" class="solution">Ratkaisu: 1 cm³ = 1000 mm³ → 6000 ÷ 1000 = 6 cm³</div>
+    </div>
+
+    <div class="task">
+        <p>10. Muunna 1,2 dm³ → m³</p>
+        <input id="answer10" type="text"/>
+        <button onclick="checkAnswer(10)">Tarkista</button>
+        <div id="feedback10"></div>
+        <div id="solution10" class="solution">Ratkaisu: 1 m³ = 1000 dm³ → 1,2 ÷ 1000 = 0,0012 m³</div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            1: "30000",
+            2: "0,45",
+            3: "250",
+            4: "300",
+            5: "12",
+            6: "5000",
+            7: "2,5",
+            8: "750",
+            9: "6",
+            10: "0,0012"
+        };
+
+        function checkAnswer(index) {
+            const userAnswer = document.getElementById("answer" + index).value.trim();
+            const feedback = document.getElementById("feedback" + index);
+            const solution = document.getElementById("solution" + index);
+            if (userAnswer === correctAnswers[index]) {
+                feedback.innerHTML = "Oikein!";
+                feedback.style.color = "green";
+            } else {
+                feedback.innerHTML = "Väärin. Oikea vastaus on " + correctAnswers[index];
+                feedback.style.color = "red";
+            }
+            solution.style.display = "block";
+        }
+    </script>
+</body>
+</html>

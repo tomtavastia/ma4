@@ -1,0 +1,155 @@
+
+<!-- aunis_iyh_nilaairetam_n:(kt)_tynillop_telo -->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tilavuuden laskutehtäviä</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .task {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tilavuuden laskutehtäviä</h2>
+    <p> </p>
+
+    <div class="task">
+        <p>1. Suorakulmainen särmiö: pituus 4 cm, leveys 3 cm, korkeus 2 cm. Laske tilavuus.</p>
+        <input id="answer1" type="text"/>
+        <button onclick="checkAnswer(1)">Tarkista</button>
+        <div id="feedback1"></div>
+        <div id="solution1" style="display:none; margin-top:5px;">
+            Ratkaisu: \( 4 \cdot 3 \cdot 2 = 24 \) cm³
+        </div>
+    </div>
+
+    <div class="task">
+        <p>2. Kuutio: sivun pituus 5 cm. Laske tilavuus.</p>
+        <input id="answer2" type="text"/>
+        <button onclick="checkAnswer(2)">Tarkista</button>
+        <div id="feedback2"></div>
+        <div id="solution2" style="display:none; margin-top:5px;">
+            Ratkaisu: \( 5 \cdot 5 \cdot 5 = 125 \) cm³
+        </div>
+    </div>
+
+    <div class="task">
+        <p>3. Lieriö: säde 3 cm, korkeus 10 cm. Laske tilavuus.</p>
+        <input id="answer3" type="text"/>
+        <button onclick="checkAnswer(3)">Tarkista</button>
+        <div id="feedback3"></div>
+        <div id="solution3" style="display:none; margin-top:5px;">
+            Ratkaisu: \( \pi \cdot 3^2 \cdot 10 = \pi \cdot 90 \approx 282{,}7 \) cm³
+        </div>
+    </div>
+
+    <div class="task">
+        <p>4. Suorakulmainen särmiö: pituus 6 cm, leveys 2 cm, korkeus 5 cm. Laske tilavuus.</p>
+        <input id="answer4" type="text"/>
+        <button onclick="checkAnswer(4)">Tarkista</button>
+        <div id="feedback4"></div>
+        <div id="solution4" style="display:none; margin-top:5px;">
+            Ratkaisu: \( 6 \cdot 2 \cdot 5 = 60 \) cm³
+        </div>
+    </div>
+
+    <div class="task">
+        <p>5. Kuutio: sivun pituus 2 cm. Laske tilavuus.</p>
+        <input id="answer5" type="text"/>
+        <button onclick="checkAnswer(5)">Tarkista</button>
+        <div id="feedback5"></div>
+        <div id="solution5" style="display:none; margin-top:5px;">
+            Ratkaisu: \( 2 \cdot 2 \cdot 2 = 8 \) cm³
+        </div>
+    </div>
+
+    <div class="task">
+        <p>6. Lieriö: säde 4 cm, korkeus 3 cm. Laske tilavuus.</p>
+        <input id="answer6" type="text"/>
+        <button onclick="checkAnswer(6)">Tarkista</button>
+        <div id="feedback6"></div>
+        <div id="solution6" style="display:none; margin-top:5px;">
+            Ratkaisu: \( \pi \cdot 4^2 \cdot 3 = \pi \cdot 48 \approx 150{,}8 \) cm³
+        </div>
+    </div>
+
+    <div class="task">
+        <p>7. Suorakulmainen särmiö: pituus 7 cm, leveys 2 cm, korkeus 4 cm. Laske tilavuus.</p>
+        <input id="answer7" type="text"/>
+        <button onclick="checkAnswer(7)">Tarkista</button>
+        <div id="feedback7"></div>
+        <div id="solution7" style="display:none; margin-top:5px;">
+            Ratkaisu: \( 7 \cdot 2 \cdot 4 = 56 \) cm³
+        </div>
+    </div>
+
+    <div class="task">
+        <p>8. Kuutio: sivun pituus 6 cm. Laske tilavuus.</p>
+        <input id="answer8" type="text"/>
+        <button onclick="checkAnswer(8)">Tarkista</button>
+        <div id="feedback8"></div>
+        <div id="solution8" style="display:none; margin-top:5px;">
+            Ratkaisu: \( 6 \cdot 6 \cdot 6 = 216 \) cm³
+        </div>
+    </div>
+
+    <div class="task">
+        <p>9. Lieriö: säde 2 cm, korkeus 8 cm. Laske tilavuus.</p>
+        <input id="answer9" type="text"/>
+        <button onclick="checkAnswer(9)">Tarkista</button>
+        <div id="feedback9"></div>
+        <div id="solution9" style="display:none; margin-top:5px;">
+            Ratkaisu: \( \pi \cdot 2^2 \cdot 8 = \pi \cdot 32 \approx 100{,}5 \) cm³
+        </div>
+    </div>
+
+    <div class="task">
+        <p>10. Suorakulmainen särmiö: pituus 3 cm, leveys 3 cm, korkeus 3 cm. Laske tilavuus.</p>
+        <input id="answer10" type="text"/>
+        <button onclick="checkAnswer(10)">Tarkista</button>
+        <div id="feedback10"></div>
+        <div id="solution10" style="display:none; margin-top:5px;">
+            Ratkaisu: \( 3 \cdot 3 \cdot 3 = 27 \) cm³
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(index) {
+            const correctAnswers = {
+                1: "24",
+                2: "125",
+                3: "282,7",
+                4: "60",
+                5: "8",
+                6: "150,8",
+                7: "56",
+                8: "216",
+                9: "100,5",
+                10: "27"
+            };
+            const userAnswer = document.getElementById("answer" + index).value.trim();
+            const feedback = document.getElementById("feedback" + index);
+            const solution = document.getElementById("solution" + index);
+            if (userAnswer === correctAnswers[index]) {
+                feedback.innerHTML = "Oikein!";
+                feedback.style.color = "green";
+            } else {
+                feedback.innerHTML = "Väärin. Oikea vastaus on " + correctAnswers[index];
+                feedback.style.color = "red";
+            }
+            solution.style.display = "block";
+        }
+    </script>
+</body>
+</html>

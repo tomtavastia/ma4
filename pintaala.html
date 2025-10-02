@@ -1,0 +1,139 @@
+
+<!-- aunis_iyh_nilaairetam_n:(kt)_tynillop_telo -->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Pinta-alatehtävät</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .task {
+            margin-bottom: 20px;
+        }
+        .solution {
+            display: none;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pinta-alatehtävät</h2>
+    <p>  </p>
+
+    <div class="task">
+        <p>1. Suorakulmio: Leveys 5 cm, pituus 8 cm. Laske pinta-ala.</p>
+        <input id="answer1" type="text"/>
+        <button onclick="checkAnswer(1)">Tarkista</button>
+        <div id="feedback1"></div>
+        <div id="solution1" class="solution">Ratkaisu: \( 5 \cdot 8 = 40 \)</div>
+    </div>
+
+    <div class="task">
+        <p>2. Neliö: Sivun pituus 6 cm. Laske pinta-ala.</p>
+        <input id="answer2" type="text"/>
+        <button onclick="checkAnswer(2)">Tarkista</button>
+        <div id="feedback2"></div>
+        <div id="solution2" class="solution">Ratkaisu: \( 6 \cdot 6 = 36 \)</div>
+    </div>
+
+    <div class="task">
+        <p>3. Kolmio: Kanta 10 cm, korkeus 4 cm. Laske pinta-ala.</p>
+        <input id="answer3" type="text"/>
+        <button onclick="checkAnswer(3)">Tarkista</button>
+        <div id="feedback3"></div>
+        <div id="solution3" class="solution">Ratkaisu: \( \frac{10 \cdot 4}{2} = 20 \)</div>
+    </div>
+
+    <div class="task">
+        <p>4. Ympyrä: Säde 3 cm. Laske pinta-ala (käytä \( \pi \approx 3{,}14 \)).</p>
+        <input id="answer4" type="text"/>
+        <button onclick="checkAnswer(4)">Tarkista</button>
+        <div id="feedback4"></div>
+        <div id="solution4" class="solution">Ratkaisu: \( 3{,}14 \cdot 3 \cdot 3 = 28{,}26 \)</div>
+    </div>
+
+    <div class="task">
+        <p>5. Suorakulmio: Leveys 7 cm, pituus 3 cm. Laske pinta-ala.</p>
+        <input id="answer5" type="text"/>
+        <button onclick="checkAnswer(5)">Tarkista</button>
+        <div id="feedback5"></div>
+        <div id="solution5" class="solution">Ratkaisu: \( 7 \cdot 3 = 21 \)</div>
+    </div>
+
+    <div class="task">
+        <p>6. Kolmio: Kanta 6 cm, korkeus 5 cm. Laske pinta-ala.</p>
+        <input id="answer6" type="text"/>
+        <button onclick="checkAnswer(6)">Tarkista</button>
+        <div id="feedback6"></div>
+        <div id="solution6" class="solution">Ratkaisu: \( \frac{6 \cdot 5}{2} = 15 \)</div>
+    </div>
+
+    <div class="task">
+        <p>7. Neliö: Sivun pituus 9 cm. Laske pinta-ala.</p>
+        <input id="answer7" type="text"/>
+        <button onclick="checkAnswer(7)">Tarkista</button>
+        <div id="feedback7"></div>
+        <div id="solution7" class="solution">Ratkaisu: \( 9 \cdot 9 = 81 \)</div>
+    </div>
+
+    <div class="task">
+        <p>8. Ympyrä: Säde 5 cm. Laske pinta-ala (käytä \( \pi \approx 3{,}14 \)).</p>
+        <input id="answer8" type="text"/>
+        <button onclick="checkAnswer(8)">Tarkista</button>
+        <div id="feedback8"></div>
+        <div id="solution8" class="solution">Ratkaisu: \( 3{,}14 \cdot 5 \cdot 5 = 78{,}5 \)</div>
+    </div>
+
+    <div class="task">
+        <p>9. Suorakulmio: Leveys 4 cm, pituus 12 cm. Laske pinta-ala.</p>
+        <input id="answer9" type="text"/>
+        <button onclick="checkAnswer(9)">Tarkista</button>
+        <div id="feedback9"></div>
+        <div id="solution9" class="solution">Ratkaisu: \( 4 \cdot 12 = 48 \)</div>
+    </div>
+
+    <div class="task">
+        <p>10. Kolmio: Kanta 8 cm, korkeus 3 cm. Laske pinta-ala.</p>
+        <input id="answer10" type="text"/>
+        <button onclick="checkAnswer(10)">Tarkista</button>
+        <div id="feedback10"></div>
+        <div id="solution10" class="solution">Ratkaisu: \( \frac{8 \cdot 3}{2} = 12 \)</div>
+    </div>
+
+    <script>
+        function checkAnswer(index) {
+            const correctAnswers = {
+                1: "40",
+                2: "36",
+                3: "20",
+                4: "28,26",
+                5: "21",
+                6: "15",
+                7: "81",
+                8: "78,5",
+                9: "48",
+                10: "12"
+            };
+            const userAnswer = document.getElementById("answer" + index).value.trim();
+            const feedback = document.getElementById("feedback" + index);
+            const solution = document.getElementById("solution" + index);
+            if (userAnswer === correctAnswers[index]) {
+                feedback.innerHTML = "Oikein!";
+                feedback.style.color = "green";
+            } else {
+                feedback.innerHTML = "Väärin. Oikea vastaus on " + correctAnswers[index];
+                feedback.style.color = "red";
+            }
+            solution.style.display = "block";
+        }
+    </script>
+</body>
+</html>
